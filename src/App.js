@@ -26,10 +26,15 @@ class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
+    const optionsName = Object.keys(this.state);
+
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.handleBtnIncrement} />
+          <FeedbackOptions
+            options={optionsName}
+            onLeaveFeedback={this.handleBtnIncrement}
+          />
 
           <Statistics
             good={good}
